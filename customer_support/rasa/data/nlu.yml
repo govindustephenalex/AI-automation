@@ -1,0 +1,50 @@
+version: "3.1"
+
+nlu:
+  - intent: greet
+    examples: |
+      - hi
+      - hello
+      - hey
+
+  - intent: goodbye
+    examples: |
+      - bye
+      - goodbye
+      - see you
+
+  - intent: request_refund
+    examples: |
+      - I want a refund
+      - I was overcharged, refund me
+      - please refund my trip
+
+  - intent: payment_issue
+    examples: |
+      - my payment failed
+      - card charged but ride not confirmed
+      - UPI payment is stuck
+
+  - intent: trip_issue
+    examples: |
+      - driver didn't show up
+      - my ride was cancelled
+      - trip ended early
+
+  - intent: account_access
+    examples: |
+      - I cannot login
+      - OTP not coming
+      - forgot my password
+
+  - intent: report_safety
+    examples: |
+      - driver was unsafe
+      - I had an accident
+      - harassment during trip
+
+  - intent: ask_faq
+    examples: |
+      - what is your refund policy
+      - how do I get OTP
+      - how to report lost item

@@ -1,0 +1,21 @@
+version: "3.1"
+
+stories:
+  - story: refund flow
+    steps:
+      - intent: request_refund
+      - action: utter_ask_trip_id
+      - intent: affirm
+      - action: action_create_ticket
+
+  - story: payment flow
+    steps:
+      - intent: payment_issue
+      - action: utter_payment_help
+      - action: action_create_ticket
+
+  - story: safety flow
+    steps:
+      - intent: report_safety
+      - action: utter_safety_ack
+      - action: action_create_ticket

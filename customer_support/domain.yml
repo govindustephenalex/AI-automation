@@ -1,0 +1,49 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - request_refund
+  - payment_issue
+  - trip_issue
+  - account_access
+  - report_safety
+  - ask_faq
+
+entities:
+  - trip_id
+  - ticket_id
+  - amount
+
+slots:
+  trip_id:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: trip_id
+  ticket_id:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: ticket_id
+
+responses:
+  utter_greet:
+    - text: "Hi. How can I help you today?"
+  utter_goodbye:
+    - text: "Goodbye. Take care."
+  utter_ask_trip_id:
+    - text: "Please share the trip id so I can investigate."
+  utter_refund_policy:
+    - text: "Refunds are issued for eligible overcharges or cancellations after review. Share your trip id to proceed."
+  utter_payment_help:
+    - text: "For payment issues, please share the method (card/UPI/wallet) and the approximate time it failed."
+  utter_safety_ack:
+    - text: "I’m sorry this happened. If anyone is in immediate danger, contact local emergency services. Share trip id and what occurred."
+
+actions:
+  - action_create_ticket
